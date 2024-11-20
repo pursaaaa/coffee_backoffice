@@ -69,7 +69,7 @@ function Sidebar() {
             <div class="info">
               <a href="#" className="d-block">{user.name}</a>
               <button onClick={handleSignOut} className='btn btn-danger'>
-                <i className='fa fa-times mr-2'>Sign Out</i>
+                <i className='fa fa-times mr-2'>   Sign Out</i>
               </button>
             </div>
           </div>

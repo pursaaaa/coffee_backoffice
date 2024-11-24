@@ -98,7 +98,8 @@ function Product() {
     setProduct({
       name: '',
       price: '',
-      cost: ''
+      cost: '',
+      description: ''
     })
     setImg(null);
     refImg.current.value = '';
@@ -216,6 +217,7 @@ function Product() {
             <th>name</th>
             <th width='150px' className='text-right'>cost</th>
             <th width='150px' className='text-right'>price</th>
+            <th width='150px' className='text-right'>description</th>
             <th width='140px'></th>
           </tr>
         </thead>
@@ -226,6 +228,7 @@ function Product() {
               <td>{item.name}</td>
               <td className='text-right'>{item.cost.toLocaleString('th-TH')}</td>
               <td className='text-right'>{item.price.toLocaleString('th-TH')}</td>
+              <td className='text-right'>{item.description}</td>
               <td className='text-center'>
                 <button className='btn btn-primary mr-2' data-toggle='modal' data-target='#modalProduct' onClick={e => setProduct(item)}>
                   <i className='fa fa-edit'></i>
@@ -251,6 +254,10 @@ function Product() {
         <div className='mt-2'>
           <div>ราคาขาย</div>
           <input value={product.price} className='form-control' onChange={e => setProduct({ ...product, price: e.target.value })} />
+        </div>
+        <div className='mt-2'>
+          <div>คำอธิบายสินค้า</div>
+          <input value={product.description} className='form-control' onChange={e => setProduct({ ...product, description: e.target.value })} />
         </div>
         <div className='mt-2'>
           <div className='mb-3'>{showImage(product)}</div>

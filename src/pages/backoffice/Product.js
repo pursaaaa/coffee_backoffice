@@ -99,7 +99,8 @@ function Product() {
       name: '',
       price: '',
       cost: '',
-      description: ''
+      description: '',
+      type: ''
     })
     setImg(null);
     refImg.current.value = '';
@@ -214,10 +215,11 @@ function Product() {
         <thead>
           <tr>
             <th width='150px'>ภาพสินค้า</th>
-            <th>name</th>
-            <th width='150px' className='text-right'>cost</th>
-            <th width='150px' className='text-right'>price</th>
-            <th width='150px' className='text-right'>description</th>
+            <th>ชื่อสินค้า</th>
+            <th width='150px' className='text-right'>ราคาทุน</th>
+            <th width='150px' className='text-right'>ราคาขาย</th>
+            <th width='150px' className='text-right'>คำอธิบายสินค้า</th>
+            <th width='150px' className='text-right'>ประเภท</th>
             <th width='140px'></th>
           </tr>
         </thead>
@@ -229,6 +231,7 @@ function Product() {
               <td className='text-right'>{item.cost.toLocaleString('th-TH')}</td>
               <td className='text-right'>{item.price.toLocaleString('th-TH')}</td>
               <td className='text-right'>{item.description}</td>
+              <td className='text-right'>{item.type}</td>
               <td className='text-center'>
                 <button className='btn btn-primary mr-2' data-toggle='modal' data-target='#modalProduct' onClick={e => setProduct(item)}>
                   <i className='fa fa-edit'></i>
@@ -259,6 +262,15 @@ function Product() {
           <div>คำอธิบายสินค้า</div>
           <input value={product.description} className='form-control' onChange={e => setProduct({ ...product, description: e.target.value })} />
         </div>
+        <div className='mt-3'>
+          <div>ประเภทสินค้า</div>
+          <select className="form-select form-select-lg" value={product.type} onChange={(e) => setProduct({ ...product, type: e.target.value })}>
+            <option selected>เลือกประเภทสินค้า</option>
+            <option value="coffee-beans">เมล็ดกาแฟ</option>
+            <option value="equipment">อุปกรณ์</option>
+          </select>
+        </div>
+
         <div className='mt-2'>
           <div className='mb-3'>{showImage(product)}</div>
           <div>ภาพสินค้า</div>

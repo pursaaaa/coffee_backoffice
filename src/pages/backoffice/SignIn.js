@@ -38,6 +38,7 @@ function SignIn() {
                     icon: 'error'
                 });
                 console.error(e); // Log full error for debugging
+                console.log(config.apiPath);
             }
         }
     };

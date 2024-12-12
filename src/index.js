@@ -12,10 +12,10 @@ import Dashboard from './pages/backoffice/Dashboard';
 import Reports from './pages/backoffice/Reports';
 
 const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <SignIn />
-  },
+  // {
+  //   path: "/",
+  //   element: <SignIn />
+  // },
   {
     path: '/home',
     element: <Home />

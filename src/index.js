@@ -12,14 +12,14 @@ import Dashboard from './pages/backoffice/Dashboard';
 import Reports from './pages/backoffice/Reports';
 
 const router = createBrowserRouter([
-  // {
-  //   path: "/",
-  //   element: <SignIn />
-  // },
   {
-    path: '/home',
+    path: "/",
     element: <Home />
   },
+  // {
+  //   path: '/home',
+  //   element: <Home />
+  // },
   {
     path: '/product',
     element: <Product />

@@ -14,12 +14,12 @@ import Reports from './pages/backoffice/Reports';
 const router = createBrowserRouter([
   {
     path: "/",
+    element: <SignIn />
+  },
+  {
+    path: '/home',
     element: <Home />
   },
-  // {
-  //   path: '/home',
-  //   element: <Home />
-  // },
   {
     path: '/product',
     element: <Product />

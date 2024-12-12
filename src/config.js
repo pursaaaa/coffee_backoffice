@@ -1,5 +1,5 @@
 const config = {
-    apiPath: process.env.REACT_APP_API_PATH || 'http://localhost:3001',
+    apiPath: "https://coffee-api-9lij.onrender.com" || 'http://localhost:3001',
     headers: () => {
         return {
             headers: {

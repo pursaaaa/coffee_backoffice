@@ -1,5 +1,5 @@
 const config = {
-    apiPath: 'http://localhost:3001',
+    apiPath: process.env.REACT_APP_API_PATH || 'http://localhost:3001',
     headers: () => {
         return {
             headers: {

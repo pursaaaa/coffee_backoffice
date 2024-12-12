@@ -11,28 +11,37 @@ function SignIn() {
     const handleSignIn = async () => {
         try {
             const res = await axios.post(config.apiPath + '/user/signIn', user);
-
+    
             if (res.data.token !== undefined) {
                 localStorage.setItem('token', res.data.token);
                 navigate('/home');
             }
         } catch (e) {
-            if (e.response.status === 401) {
-                Swal.fire({
-                    title: 'Sign in',
-                    text: 'username or password invalid',
-                    icon: 'warning'
-                })
+            if (e.response) {
+                if (e.response.status === 401) {
+                    Swal.fire({
+                        title: 'Sign in',
+                        text: 'Username or password invalid',
+                        icon: 'warning'
+                    });
+                } else {
+                    Swal.fire({
+                        title: 'Error',
+                        text: e.response.data.message || 'An unexpected error occurred',
+                        icon: 'error'
+                    });
+                }
             } else {
                 Swal.fire({
-                    title: 'error',
-                    text: e.message,
+                    title: 'Network Error',
+                    text: 'Unable to connect to the server. Please check your network or server status.',
                     icon: 'error'
-                })
-                console.log(e);
+                });
+                console.error(e); // Log full error for debugging
             }
         }
-    }
+    };
+    
 
     return (
         <div class="hold-transition login-page">

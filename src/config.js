@@ -1,5 +1,5 @@
 const config = {
-    apiPath: "https://coffee-api-9lij.onrender.com" || 'http://localhost:3001',
+    apiPath: "https://coffee-api-9lij.onrender.com",
     headers: () => {
         return {
             headers: {
